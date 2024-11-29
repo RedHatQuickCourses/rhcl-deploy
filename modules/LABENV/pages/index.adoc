@@ -21,10 +21,6 @@ image::labenv.png[align="center"]
 
 NOTE: The lab environment will take an hour to provision. You can check the status and details of the OpenShift cluster from the `Services` page of RHDP. The classroom is available for 48 hours initially. You can extend the duration of classroom availability by clicking `Help > Get Technical Help` in RHDP, and then requesting an extension by opening a ServiceNow ticket with the RHDP team.
 
-== Access your lab environment via RHDP Portal:
-* On the https://demo.redhat.com/[RHDP] portal, click on the **Services** tab in the left-hand menu.
-* **Select your lab** from the listings on the right-hand side of the page to view access details.
-
 == RHDP Portal Links
 * https://demo.redhat.com/[RedHat Associates]
 * https://partner.demo.redhat.com/[RedHat Partners]
