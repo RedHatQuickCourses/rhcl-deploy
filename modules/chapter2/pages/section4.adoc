@@ -1,8 +1,10 @@
-== Install Kuadrant on Red Hat OpenShift cluster
+:imagesdir: ../images
 
-In this lab, you install and setup Kuadrant Operator and trigger Kuadrant deployment.
+== Install Red Hat Connectivity Link  on Red Hat OpenShift cluster
 
-=== Install Kuadrant
+In this lab, you install and setup Red Hat Connectivity Link operator and trigger a Kuadrant deployment.
+
+=== Install Connectivity Link
 
 . Create **kuadrant-system** namespace as shown below:
 +
@@ -20,7 +22,7 @@ You should see output as follows:
 namespace/kuadrant-system created
 ----
 
-. Setup **catalog source** for Kuadrant Operator by appling the yaml settings using below command:
+. Setup **catalog source** for Red Hat Connectivity Link Operator by applying the yaml settings using below command:
 +
 ====
 [source,subs="verbatim,quotes"]
@@ -50,7 +52,7 @@ You should see output as follows:
 catalogsource.operators.coreos.com/kuadrant-operator-catalog created
 ----
 
-. Install the **Kuadrant** operator by navigating to the Red Hat OpenShift cluster, select **OperatorHub** from side panel and search **Kuadrant**. 
+. Navigate to the Red Hat OpenShift cluster. From the Administrator view, select **Operators > OperatorHub** from side panel and search **Red Hat Connectivity Link**.
 Select the **Kuadrant Operator** highlighted in below screenshot and click **Install**
 +
 image::install1.png[align="center"]
@@ -68,18 +70,18 @@ image::new2.png[align="center"]
 ----
 ====
 
-* Observe the **Kuadrant** operator is installed along with it's dependencies in the _Red Hat Openshift_ console's  _Installed Operators_ section.
+* Observe the **Connectivity Link** operator is installed along with it's dependencies in the _Red Hat Openshift_ console's  _Installed Operators_ section.
 +
 image::service4.png[align="center"]
 +
-** Below are the dependencies installed:
+** Below are the components installed:
 *** https://docs.kuadrant.io/latest/authorino-operator/#the-authorino-custom-resource-definition-crd[Authorino](Enforcement Component for AuthPolicy)
 *** https://docs.kuadrant.io/latest/limitador-operator/#features[Limitador (Enforcement Component for RateLimitPolicy)]
 *** DNS Operator (Enforcement Component for DNSPOlicy)
 
-=== Deploy Kuadrant
+=== Deploy Connectivity Link
 
-* To trigger your Kuadrant deployment, execute the yaml settings using the following command:
+* To trigger your Connectivity Link deployment, create the Custom Resources using the following command:
 +
 ====
 [source,subs="verbatim,quotes"]
@@ -119,13 +121,12 @@ kuadrant.kuadrant.io/kuadrant condition met
 
 * Enable **Kuadrant** plugin to view components configuration status easily that we would perform in coming sections.
 
-. You can also refer to https://app.arcade.software/share/e2XOH3IWMRzMEfEVMm8d[this arcade link] to see step by step instructions on enabling the plugin.
+. You can refer below step by step instructions on enabling the plugin.
 
-. Or you can refer these steps:
-.. Navigate _Red Hat OpenShift cluster_ and from **Administrator** view, click  on **Home** -> **Overview**.
-.. Under **Status** section, click on **Dynamic Plugins** -> **View All**.
-.. You will see **kuadrant-console-plugin** marked  as disabled.
-.. Click on the pencil icon and then choose **Enabled** and click **Save**.
+++++
+<!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(49.609375% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/e2XOH3IWMRzMEfEVMm8d?embed&embed_mobile=inline&embed_desktop=inline&show_copy_link=true" title="Enable Red Hat Connectivity Link&#39;s Kuadrant Dynamic Plugin on Red Hat OpenShift console" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
+++++
+
 .. Refresh the page in a couple of minutes, and you will see the Kuadrant menu on the left hand side menu.
 +
 image::kuad2.png[align="center"]
