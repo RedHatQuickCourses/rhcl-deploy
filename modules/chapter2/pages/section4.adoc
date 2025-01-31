@@ -22,40 +22,10 @@ You should see output as follows:
 namespace/kuadrant-system created
 ----
 
-. Setup **catalog source** for Red Hat Connectivity Link Operator by applying the yaml settings using below command:
-+
-====
-[source,subs="verbatim,quotes"]
-----
-**oc apply -f -<<EOF
-apiVersion: operators.coreos.com/v1alpha1
-kind: CatalogSource
-metadata:
-  name: kuadrant-operator-catalog
-  namespace: kuadrant-system
-spec:
-  sourceType: grpc
-  image: quay.io/kuadrant/kuadrant-operator-catalog:v1.0.0-rc8
-  displayName: Kuadrant Operators
-  publisher: grpc
-  updateStrategy:
-    registryPoll:
-      interval: 45m
-EOF**
-----
-====
-+
-You should see output as follows:
-+
-[source,subs="verbatim,quotes"]
-----
-catalogsource.operators.coreos.com/kuadrant-operator-catalog created
-----
-
 . Navigate to the Red Hat OpenShift cluster. From the Administrator view, select **Operators > OperatorHub** from side panel and search **Red Hat Connectivity Link**.
 Select the **Kuadrant Operator** highlighted in below screenshot and click **Install**
 +
-image::install1.png[align="center"]
+image::operator2.png[align="center"]
 
 * Select **kuadrant-system** namespace as shown in below screenshot and click **Install**.
 +
@@ -72,7 +42,7 @@ image::new2.png[align="center"]
 
 * Observe the **Connectivity Link** operator is installed along with it's dependencies in the _Red Hat Openshift_ console's  _Installed Operators_ section.
 +
-image::service4.png[align="center"]
+image::other.png[align="center"]
 +
 ** Below are the components installed:
 *** https://docs.kuadrant.io/latest/authorino-operator/#the-authorino-custom-resource-definition-crd[Authorino](Enforcement Component for AuthPolicy)
