@@ -219,45 +219,11 @@
 </div>
 </li>
 <li>
-<p>Setup <strong>catalog source</strong> for Red Hat Connectivity Link Operator by applying the yaml settings using below command:</p>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs"><strong>oc apply -f -&lt;&lt;EOF
-apiVersion: operators.coreos.com/v1alpha1
-kind: CatalogSource
-metadata:
-  name: kuadrant-operator-catalog
-  namespace: kuadrant-system
-spec:
-  sourceType: grpc
-  image: quay.io/kuadrant/kuadrant-operator-catalog:v1.0.0-rc8
-  displayName: Kuadrant Operators
-  publisher: grpc
-  updateStrategy:
-    registryPoll:
-      interval: 45m
-EOF</strong></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>You should see output as follows:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">catalogsource.operators.coreos.com/kuadrant-operator-catalog created</code></pre>
-</div>
-</div>
-</li>
-<li>
 <p>Navigate to the Red Hat OpenShift cluster. From the Administrator view, select <strong>Operators &gt; OperatorHub</strong> from side panel and search <strong>Red Hat Connectivity Link</strong>.
 Select the <strong>Kuadrant Operator</strong> highlighted in below screenshot and click <strong>Install</strong></p>
 <div class="imageblock text-center">
 <div class="content">
-<img src="_images/install1.png" alt="install1">
+<img src="_images/operator2.png" alt="operator2">
 </div>
 </div>
 <div class="ulist">
@@ -286,7 +252,7 @@ Select the <strong>Kuadrant Operator</strong> highlighted in below screenshot an
 <p>Observe the <strong>Connectivity Link</strong> operator is installed along with it&#8217;s dependencies in the <em>Red Hat Openshift</em> console&#8217;s  <em>Installed Operators</em> section.</p>
 <div class="imageblock text-center">
 <div class="content">
-<img src="_images/service4.png" alt="service4">
+<img src="_images/other.png" alt="other">
 </div>
 </div>
 <div class="ulist">
